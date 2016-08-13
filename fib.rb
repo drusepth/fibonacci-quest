@@ -21,7 +21,7 @@ end
 
 def intro
 	write [
-		"Fibonacci stood over his aching mother, deeply sick from a terrible flu. ",
+		"Fibonacci stood over his agonizing mother, deeply sick from a terrible flu. ",
 		"\"I'll get the money we need for your medicine, mother,\" he promised. ",
 		"\"It'll be a lot, but I can do it. I have a plan.",
 		"\n",
@@ -44,19 +44,21 @@ def fib(n, writing: true)
 	if n > $largest_n
 		if writing
 			write [
+				"\n",
 				"As he arrived in the #{(n - 2).ordinalize} city, he set his sights towards the king's grand palace. ",
 				'"Please help me," he begged the king, telling tales of his mother and her illness. ',
 				"\"You're the third king I've seen,\" ",
 				(fib(n - 1) < 3 ? "he lied, " : "he said, "),
 				"\"the last two kings I saw were very helpful, ",
-				"\"but I bet you're richer than both of them combined! My could be well in no time with your help, your highness.\"",
+				"\"but I bet you're richer than both of them combined! My mother could be well in no time with your help, your highness.\"",
 				"\n",
 				'"Oh, I can\'t have them outdoing me!", the king protested. "How much did they give?"',
 				"\n",
 				"\"They  offered me $#{fib(n - 2)}.00 and $#{fib(n-1)}.00,\" Fibonacci lied. ",
-				"\"Together, that means $#{fib(n-1) + fib(n-2)}.00 towards her medicine. Look here!\"",
+				"\"Together, that means $#{fib(n-1) + fib(n-2)}.00 towards her medicine. ",
+				(fib(n - 1) == 1 ? "Almost nothing!\"" : "Look here!\""),
 				"\n",
-				"\"Ah, yes,\" the king stuttered, saving face. \"I am richer than them! ",
+				"\"Ah, yes,\" the king stuttered, saving face. \"I am richer than them combined! ",
 				"I'll send you on your way with $#{fib(n - 1) + fib(n - 2)}.00 more.\"",
 				"\n",
 				"\"Thank you, your highness,\" Fibonacci yelled. \"You don't know how much that helps!\" ",
@@ -72,7 +74,7 @@ end
 
 def outro
 	write [
-		"Fibonacci enthusiastically thanked the king again as he recounted the bag of money he had just filled. ",
+		"\nFibonacci enthusiastically thanked the king again as he recounted the bag of money he had just filled. ",
 		"\"This should be enough,\" he said, encouragingly. He looked pensively in the direction toward home. ",
 		"\"Godspeed,\" the king said, and Fibonacci was off.",
 		"\n",
